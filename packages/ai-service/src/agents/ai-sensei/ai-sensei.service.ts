@@ -1,15 +1,14 @@
 // src/ai-agents/sensei-agent/ai-sensei.service.ts
 import { Injectable, Logger } from '@nestjs/common';
 import {
-  createAgent,
+  createDreams,
   context,
   render,
   LogLevel,
-  extension,
   output,
   input,
   Agent,
-} from '@axiomkit/core';
+} from '@daydreamsai/core';
 import { z } from 'zod';
 import { groq } from '@ai-sdk/groq';
 import { simpleUI } from '../simple-ui/simple-ui';
@@ -173,7 +172,7 @@ Your response should be natural. Use 'senseiResponseOutput' for your reply.
       maxSteps: 1,
     });
 
-    this.agent = createAgent({
+    this.agent = createDreams({
       logLevel: LogLevel.DEBUG,
       model: groq(this.config.model),
       inputs: {

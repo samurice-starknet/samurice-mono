@@ -1,4 +1,4 @@
-import { LogLevel } from '@axiomkit/core';
+import { LogLevel } from '@daydreamsai/core';
 
 // ANSI color codes
 const COLORS = {

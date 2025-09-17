@@ -1,13 +1,12 @@
 import { Injectable, Logger } from '@nestjs/common';
 import {
-  createAgent,
+  createDreams,
   context,
   render,
-  extension,
   output,
   Agent,
   input,
-} from '@axiomkit/core';
+} from '@daydreamsai/core';
 import { z } from 'zod';
 import { groq } from '@ai-sdk/groq';
 
@@ -351,7 +350,7 @@ export class AIEnemyService {
       maxSteps: 1,
     });
 
-    this.agent = createAgent({
+    this.agent = createDreams({
       model: groq(this.config.model),
       inputs: {
         updateGameState: input({

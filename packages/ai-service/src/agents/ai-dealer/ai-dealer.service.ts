@@ -1,14 +1,13 @@
 import { Injectable, Logger } from '@nestjs/common';
 import {
-  createAgent,
+  createDreams,
   context,
   render,
-  LogLevel,
-  extension,
   output,
   input,
   Agent,
-} from '@axiomkit/core';
+  LogLevel,
+} from '@daydreamsai/core';
 import { z } from 'zod';
 import { groq } from '@ai-sdk/groq';
 import { simpleUI } from '../simple-ui/simple-ui';
@@ -303,7 +302,7 @@ Use 'baoResponseOutput' for your reply.
       maxSteps: 1,
     });
 
-    this.agent = createAgent({
+    this.agent = createDreams({
       logLevel: LogLevel.DEBUG,
       model: groq(this.config.model),
       inputs: {
