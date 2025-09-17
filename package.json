@@ -1,0 +1,18 @@
+{
+  "name": "samurice-be-mono",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "docker compose up --build -d",
+    "run:redis": "docker run --name redis -p 6379:6379 -d redis",
+    "stop": "docker compose down",
+    "build": "yarn workspaces run build",
+    "lint": "yarn workspaces run lint",
+    "test": "yarn workspaces run test"
+  }
+}
