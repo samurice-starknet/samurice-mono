@@ -17,7 +17,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = configSystem().API_PORT;
 
-  app.enableCors(configureCors(whitelistPage));
+  // app.enableCors(configureCors(whitelistPage));
+  app.enableCors({ origin: '*' });
 
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));

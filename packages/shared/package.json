@@ -20,18 +20,20 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@cartridge/controller": "^0.10.7",
     "@nestjs/bull": "^10.2.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.2",
     "@nestjs/core": "^10.0.0",
-    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/jwt": "^11.0.1",
     "@nestjs/mongoose": "^10.0.6",
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.0.0",
-    "@nestjs/platform-socket.io": "^10.3.9",
+    "@nestjs/platform-socket.io": "^11.1.6",
     "@nestjs/schedule": "^4.1.0",
     "@nestjs/swagger": "^7.3.1",
-    "@nestjs/websockets": "^10.3.9",
+    "@nestjs/typeorm": "^11.0.0",
+    "@nestjs/websockets": "^11.1.6",
     "@types/lodash": "^4.17.7",
     "@types/uuid": "^10.0.0",
     "axios": "^1.6.8",
@@ -47,10 +49,13 @@
     "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.27",
     "uuid": "^11.1.0",
     "viem": "^2.21.40"
   },
   "devDependencies": {
+    "@cartridge/controller": "^0.10.2",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
@@ -68,14 +73,13 @@
     "mongodb-memory-server": "^10.1.4",
     "prettier": "^3.0.0",
     "source-map-support": "^0.5.21",
+    "starknet": "^7.6.4",
     "supertest": "^7.1.0",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.1.3",
-    "starknet": "^7.6.4",
-    "@cartridge/controller": "^0.10.2"
+    "typescript": "^5.1.3"
   },
   "jest": {
     "moduleFileExtensions": [

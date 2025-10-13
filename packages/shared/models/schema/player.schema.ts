@@ -13,6 +13,9 @@ export class Players extends Document {
 
   @Prop()
   username: string;
+
+  @Prop()
+  nonce: string;
 }
 
 export const PlayerSchema = SchemaFactory.createForClass(Players);
