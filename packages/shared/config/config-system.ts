@@ -8,6 +8,7 @@ interface AppConfig {
   AI_PORT: number;
   API_PORT: number;
   GAME_SOCKET_GATEWAY_PORT: number;
+  CRAWLER_PORT: number;
   JWT_SECRET: string;
   JWT_EXPIRE: string;
   RPC_URL: string;
@@ -17,7 +18,9 @@ interface AppConfig {
   };
   CONTRACT_ADDRESSES: {
     GAME: string;
+    WORLD: string;
   };
+  START_BLOCK: number;
 }
 
 const configSystem = (): AppConfig => ({
@@ -25,6 +28,7 @@ const configSystem = (): AppConfig => ({
   API_PORT: Number(process.env.API_PORT),
   AI_PORT: Number(process.env.AI_PORT),
   GAME_SOCKET_GATEWAY_PORT: Number(process.env.GAME_SOCKET_GATEWAY_PORT),
+  CRAWLER_PORT: Number(process.env.CRAWLER_PORT),
   JWT_SECRET: String(process.env.JWT_SECRET),
   JWT_EXPIRE: String(process.env.JWT_EXPIRE),
   RPC_URL: String(process.env.RPC_URL),
@@ -34,7 +38,9 @@ const configSystem = (): AppConfig => ({
   },
   CONTRACT_ADDRESSES: {
     GAME: String(process.env.CONTRACT_ADDRESS_GAME),
+    WORLD: String(process.env.CONTRACT_ADDRESS_WORLD),
   },
+  START_BLOCK: Number(process.env.START_BLOCK),
 });
 
 export default configSystem;

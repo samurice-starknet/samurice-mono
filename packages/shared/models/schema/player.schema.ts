@@ -16,6 +16,9 @@ export class Players extends Document {
 
   @Prop()
   nonce: string;
+
+  @Prop({ default: 0 })
+  point?: number;
 }
 
 export const PlayerSchema = SchemaFactory.createForClass(Players);
