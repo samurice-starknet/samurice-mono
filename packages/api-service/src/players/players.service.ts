@@ -51,7 +51,7 @@ export class PlayersService {
         chainId: 'SN_SEPOLIA',
       },
       message: {
-        nonce: player,
+        nonce: player.nonce,
       },
     };
     return typedDataValidate;
@@ -87,7 +87,7 @@ export class PlayersService {
     return token;
   }
 
-  async updateRandomNonce(address: string): Promise<PlayersDocument> {
+  async updateRandomNonce(address: string): Promise<string> {
     const formattedAddress = formattedContractAddress(address);
     const user = await this.playerModel
       .findOneAndUpdate(
@@ -97,7 +97,7 @@ export class PlayersService {
       )
       .exec();
 
-    return user;
+    return user.nonce;
   }
 
   async getOrCreatePlayer(walletAddress: string) {
@@ -117,6 +117,7 @@ export class PlayersService {
       const newPlayer = new this.playerModel({
         address: formattedAddress,
         username: null,
+        nonce: uuidv4(),
       });
 
       player = await newPlayer.save();
