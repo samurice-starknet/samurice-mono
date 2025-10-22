@@ -98,7 +98,7 @@ export class Web3Service {
     try {
       const tx = await this.getValidatorAccount().execute([
         {
-          contractAddress: configSystem().VALIDATOR.ADDRESS,
+          contractAddress: configSystem().CONTRACT_ADDRESSES.GAME,
           entrypoint: 'popFrontQueue',
           calldata: [],
         },
